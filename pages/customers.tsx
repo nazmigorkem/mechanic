@@ -26,7 +26,7 @@ export default function customers() {
 				<NavbarElement queryKey='allCustomers' text='All Customers' selectedQuery={selectedQuery} onClick={() => setSelectedQuery('allCustomers')} />
 			</div>
 
-			<div className='h-3/4 w-3/4 rounded-md shadow-md bg-black bg-opacity-40 flex itmes-center justify-center p-36 flex-wrap overflow-auto'>
+			<div className='h-3/4 w-3/4 rounded-md shadow-md bg-black bg-opacity-40 flex itmes-center justify-center p-24 flex-wrap overflow-auto'>
 				<table className='divide-y-4 divide-slate-600 border-2 border-gray-700 w-full text-center'>
 					{selectedQuery === 'premiumCustomers' && <Table cols={['ID', 'Name', 'Contact Number', 'Number of Visits', 'Rank']} rows={premiumData} />}
 					{selectedQuery === 'allCustomers' && <Table cols={['ID', 'Name', 'Contact Number']} rows={allData} />}
