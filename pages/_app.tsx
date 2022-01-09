@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<NavbarElement text='Jobs' />
 				<NavbarElement text='Employees' />
 				<NavbarElement text='Suppliers' />
+				<NavbarElement text='Customers' />
 			</div>
 			<div className='ml-52'>
 				<Component {...pageProps} />
