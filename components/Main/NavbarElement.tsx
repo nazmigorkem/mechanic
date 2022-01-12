@@ -5,7 +5,7 @@ export default function NavbarElement({ text }: { text: string }) {
 	return (
 		<div
 			onClick={() => {
-				router.push(text.toLowerCase());
+				router.push('/' + text.toLowerCase());
 			}}
 			className={
 				'text-white p-3 rounded-l-md hover:bg-body-bg transfrom duration-300 cursor-pointer ' +

@@ -5,3 +5,18 @@ body {
 	background-color: #17181d;
 	color: rgb(190, 184, 184);
 }
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+	background: rgba(3, 3, 3, 0.3);
+}
+::-webkit-scrollbar-track {
+	background: #2d3038;
+	border: none;
+}

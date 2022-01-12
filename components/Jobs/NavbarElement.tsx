@@ -15,7 +15,7 @@ export default function NavbarElement({
 		<div
 			onClick={onClick}
 			className={
-				'py-5 text-white rounded-t-md w-48 text-center select-none transform duration-300' +
+				'py-5 px-3 text-white rounded-t-md w-48 text-center select-none transform duration-300' +
 				(selectedQuery === queryKey ? ' bg-black bg-opacity-40 ' : ' bg-stone-700 cursor-pointer hover:bg-black hover:bg-opacity-40')
 			}>
 			{text}
