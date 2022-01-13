@@ -7,11 +7,13 @@ import { fetcher } from '../../util/functions';
 
 export default function Jobs() {
 	const [selectedQuery, setSelectedQuery] = useState('onGoingJobs');
-	const { data: onGoingJobs } = useSWR(`/api/jobs`, fetcher);
+	const { data: jobs } = useSWR(`/api/jobs`, fetcher);
 	const router = useRouter();
-	if (!onGoingJobs) {
+	if (!jobs) {
 		return <></>;
 	}
+	const onGoingJobs = jobs.onGoingJobs;
+	const finishedJobs = jobs.finishedJobs;
 	return (
 		<>
 			<div className='h-screen w-full flex flex-col items-center justify-center'>
@@ -24,6 +26,9 @@ export default function Jobs() {
 					<table className='divide-y-4 divide-slate-600 border-2 border-gray-700 w-full text-center'>
 						{selectedQuery === 'onGoingJobs' && (
 							<Table cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Part Cost', 'Start Date']} rows={onGoingJobs} onClick={'receiptID'} />
+						)}
+						{selectedQuery === 'finishedJobs' && (
+							<Table cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Total Cost (₺)', 'Total Time Spent (Days)', 'Start Date', 'End Date']} rows={finishedJobs}/>
 						)}
 					</table>
 				</div>
