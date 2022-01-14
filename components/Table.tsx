@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
-import { MouseEventHandler } from 'react';
 
-export default function Table({ cols, rows, onClick }: { cols: string[]; rows: any[]; onClick?: string }) {
+export default function Table({ cols, rows, onClick }: { cols: string[]; rows: any[]; onClick?: string[] }) {
 	const router = useRouter();
 	return (
 		<>
@@ -18,7 +17,16 @@ export default function Table({ cols, rows, onClick }: { cols: string[]; rows: a
 							<tr
 								className={'hover:bg-gray-700 ' + (onClick ? 'cursor-pointer' : '')}
 								onClick={() => {
-									if (onClick) router.push(`/jobs/${x[onClick]}`);
+									if (onClick) {
+										let finalURL = '';
+										for (let i = 0; i < onClick.length; i++) {
+											const element = onClick[i];
+											console.log(x[element]);
+											finalURL += '/';
+											finalURL += x[element] ?? element;
+										}
+										router.push(`/jobs${finalURL}`);
+									}
 								}}>
 								<ExtractRowValues rowElement={x} />
 							</tr>

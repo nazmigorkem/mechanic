@@ -25,10 +25,14 @@ export default function Jobs() {
 				<div className='h-3/4 w-3/4 rounded-md shadow-md bg-black bg-opacity-40 flex itmes-center justify-center p-24 flex-wrap overflow-auto'>
 					<table className='divide-y-4 divide-slate-600 border-2 border-gray-700 w-full text-center'>
 						{selectedQuery === 'onGoingJobs' && (
-							<Table cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Part Cost', 'Start Date']} rows={onGoingJobs} onClick={'receiptID'} />
+							<Table cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Part Cost', 'Start Date']} rows={onGoingJobs} onClick={['receiptID']} />
 						)}
 						{selectedQuery === 'finishedJobs' && (
-							<Table cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Total Cost (₺)', 'Total Time Spent (Days)', 'Start Date', 'End Date']} rows={finishedJobs}/>
+							<Table
+								onClick={['receiptID', 'summary']}
+								cols={['Customer ID', 'Name', 'Receipt ID', 'License Plate', 'Total Cost (₺)', 'Total Time Spent (Days)', 'Start Date', 'End Date']}
+								rows={finishedJobs}
+							/>
 						)}
 					</table>
 				</div>

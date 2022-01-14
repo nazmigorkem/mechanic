@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { Dispatch, SetStateAction, useState } from 'react';
 import useSWR from 'swr';
-import NavbarElement from '../../components/Jobs/NavbarElement';
-import { fetcher } from '../../util/functions';
+import NavbarElement from '../../../components/Jobs/NavbarElement';
+import { fetcher } from '../../../util/functions';
 
 export default function Jobs() {
 	const [selectedQuery, setSelectedQuery] = useState('onGoingJobs');
@@ -120,7 +120,12 @@ export default function Jobs() {
 									)}
 								</div>
 							</div>
-							<div className='absolute bottom-5 p-5 bg-red-600 rounded-md text-white font-semibold hover:bg-red-700 transform duration-200 cursor-pointer select-none'>
+							<div
+								className='absolute bottom-5 p-5 bg-red-600 rounded-md text-white font-semibold hover:bg-red-700 transform duration-200 cursor-pointer select-none'
+								onClick={async () => {
+									await finishTheJob(router.query.receiptID as string);
+									router.push(`${router.query.receiptID}/summary`);
+								}}>
 								Finish the job
 							</div>
 						</div>
@@ -245,4 +250,8 @@ async function sendResults(id: string, results: object) {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(results),
 	});
+}
+
+async function finishTheJob(id: string) {
+	const res = await fetcher(`/api/jobs/${id}/summary`);
 }
