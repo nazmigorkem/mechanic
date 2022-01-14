@@ -60,7 +60,7 @@ export default function Jobs() {
 												mutateAllParts();
 												mutateCustomerParts();
 											}}
-											className='bg-red-600 px-3 rounded-lg font-bold cursor-pointer select-none my-auto'>
+											className='bg-red-600 px-3 rounded-lg font-bold text-white cursor-pointer select-none my-auto'>
 											{'<'}
 										</span>
 										<span className='grow ml-3 flex flex-row h-full  items-center gap-x-3' key={i}>
@@ -74,7 +74,7 @@ export default function Jobs() {
 												mutateAllParts();
 												mutateCustomerParts();
 											}}
-											className='bg-green-600 px-3 rounded-lg font-bold cursor-pointer select-none my-auto'>
+											className='bg-green-600 px-3 rounded-lg font-bold text-white cursor-pointer select-none my-auto'>
 											{'>'}
 										</span>
 										<br />
