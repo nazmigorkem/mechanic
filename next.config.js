@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
-}
+	reactStrictMode: true,
+	async redirects() {
+		return [
+			{
+				source: '/',
+				destination: '/jobs',
+				permanent: false,
+				basePath: false,
+			},
+		];
+	},
+};
