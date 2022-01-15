@@ -1,0 +1,13 @@
+[
+	{ "label": "First Name", "maxLength": 25, "type": "text" },
+	{ "label": "Last Name", "maxLength": 25, "type": "text" },
+	{ "label": "Contact Number", "maxLength": 15, "type": "text" },
+	{ "label": "Chasis Number", "maxLength": 17, "type": "text" },
+	{ "label": "License Plate", "maxLength": 7, "type": "text" },
+	{ "label": "Brand", "maxLength": 20, "type": "text" },
+	{ "label": "Model", "maxLength": 20, "type": "text" },
+	{ "label": "Motor Type", "maxLength": 1, "type": "text" },
+	{ "label": "Gear Type", "maxLength": 1, "type": "text" },
+	{ "label": "Vehicle KM", "maxLength": 8, "type": "number" },
+	{ "label": "Is Insured", "maxLength": 1, "type": "text" }
+]

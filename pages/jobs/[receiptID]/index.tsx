@@ -52,7 +52,7 @@ export default function Jobs() {
 							</div>
 							<div style={{ height: '85%' }} className='bg-body-bg mx-auto w-1/3 px-5 py-2 absolute right-24 overflow-y-auto space-y-3 flex flex-col'>
 								{customerParts.map((x: any, i: number) => (
-									<div className='flex flex-row gap-2 justify-between w-10/12 self-center'>
+									<div key={i} className='flex flex-row gap-2 justify-between w-10/12 self-center'>
 										<span
 											onClick={async () => {
 												const part = allParts[x.brand].find((y: any) => y.partType === x.partType);

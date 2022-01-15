@@ -4,7 +4,7 @@ import NavbarElement from '../components/Jobs/NavbarElement';
 import Table from '../components/Table';
 import { fetcher } from '../util/functions';
 
-export default function employees() {
+export default function Employees() {
 	const [selectedQuery, setSelectedQuery] = useState('employees');
 	const { data: employeesData, mutate } = useSWR(`/api/employees`, fetcher);
 	if (!employeesData) {

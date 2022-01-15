@@ -67,7 +67,7 @@ export default function Summary() {
 							</div>
 							<div style={{ height: '85%' }} className='bg-body-bg mx-auto w-1/3 px-5 py-2 absolute right-24 overflow-y-auto space-y-3 flex flex-col'>
 								{parts.map((x: any, i: number) => (
-									<div className='flex flex-row gap-2 w-full self-center'>
+									<div key={i} className='flex flex-row gap-2 w-full self-center'>
 										<span className='grow ml-3 flex flex-row h-full items-center gap-x-3' key={i}>
 											<div className='text-white font-semibold '>{x.amount + 'x'}</div>
 											<div>{x.brand + ' ' + x.partType}</div>

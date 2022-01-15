@@ -12,9 +12,10 @@ export default function Table({ cols, rows, onClick }: { cols: string[]; rows: a
 
 			<tbody className='divide-y divide-neutral-700'>
 				<>
-					{rows.map((x: { [key: string]: any }) => {
+					{rows.map((x: { [key: string]: any }, i: number) => {
 						return (
 							<tr
+								key={i}
 								className={'hover:bg-gray-700 ' + (onClick ? 'cursor-pointer' : '')}
 								onClick={() => {
 									if (onClick) {

@@ -4,7 +4,7 @@ import NavbarElement from '../components/Jobs/NavbarElement';
 import Table from '../components/Table';
 import { fetcher } from '../util/functions';
 
-export default function customers() {
+export default function Customers() {
 	const [selectedQuery, setSelectedQuery] = useState('premiumCustomers');
 	const { data: premiumData } = useSWR(`/api/customers?type=premium`, fetcher);
 	const { data: allData, error } = useSWR(`/api/customers?type=all`, fetcher);

@@ -20,3 +20,7 @@ body {
 	background: #2d3038;
 	border: none;
 }
+
+.newjob-input {
+	@apply bg-body-bg focus:outline-none p-2;
+}
