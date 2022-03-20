@@ -7,3 +7,5 @@
 
 ##### Site should be available on http://localhost
 ##### Mechanic-backend should be running.
+
+`Note: This is our school project.`
